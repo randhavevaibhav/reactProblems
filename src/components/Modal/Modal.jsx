@@ -10,7 +10,7 @@ const Modal = ({ children, isOpen, onClose }) => {
   return (
     <>
       <div
-        className={`inset-0 fixed bg-gray-500 bg-opacity-70 ${
+        className={`inset-0 z-50 fixed bg-black bg-opacity-80 ${
           isOpen ? "block" : "hidden"
         }`}
         onClick={onClose}

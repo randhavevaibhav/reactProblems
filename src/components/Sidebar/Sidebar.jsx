@@ -17,7 +17,7 @@ const Sidebar = () => {
       <aside
         className={`w-64  p-4 bg-[#111827] rounded-md text-white h-screen md:translate-x-0  transform transition duration-700 ease-in-out ${
           !isSidebarOpen ? "-translate-x-[18rem]" : ""
-        }  fixed top-0 z-20 m-3 overflow-auto`}
+        }  fixed top-0 z-10 m-3 overflow-auto`}
       >
         <div className="flex justify-end">
           <button
