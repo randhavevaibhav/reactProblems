@@ -45,10 +45,10 @@ const Sidebar = () => {
           >
             <FaCircleRight />
           </SidebarItem>
-          <SidebarItem
-            displayName="Job Posts"
-            linkTo={"/jobpost"}
-          >
+          <SidebarItem displayName="Job Posts" linkTo={"/jobpost"}>
+            <FaCircleRight />
+          </SidebarItem>
+          <SidebarItem displayName="Modal Page" linkTo={"/modalpage"}>
             <FaCircleRight />
           </SidebarItem>
         </ul>
