@@ -1,9 +1,10 @@
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { SideBarContext } from "../../App";
+import { GlobalContext } from "../../App";
 import { useContext } from "react";
 const SidebarItem = ({ children = <FaHome />, linkTo, displayName }) => {
-  const { isSidebarOpen, setIsSidebarOpen } = useContext(SideBarContext);
+  const { SidebarContext } = useContext(GlobalContext);
+  const { isSidebarOpen,setIsSidebarOpen } = SidebarContext;
   return (
     <>
       <li>

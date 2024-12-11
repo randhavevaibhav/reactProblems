@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { SideBarContext } from "../../App";
+import { GlobalContext } from "../../App";
 // Icons import
 import { FaHome } from "react-icons/fa";
 import { FaCircleRight } from "react-icons/fa6";
@@ -11,13 +11,14 @@ import SidebarItem from "./SidebarItem";
 //Sub-Components impors
 
 const Sidebar = () => {
-  const { isSidebarOpen, setIsSidebarOpen } = useContext(SideBarContext);
+  const { SidebarContext } = useContext(GlobalContext);
+  const {isSidebarOpen,setIsSidebarOpen} = SidebarContext;
   return (
     <>
       <aside
         className={`w-64  p-4 bg-[#111827] rounded-md text-white h-screen md:translate-x-0  transform transition duration-700 ease-in-out ${
           !isSidebarOpen ? "-translate-x-[18rem]" : ""
-        }  fixed top-0 z-10 m-3 overflow-auto`}
+        }  fixed top-0 z-20 m-3 overflow-auto`}
       >
         <div className="flex justify-end">
           <button
@@ -45,10 +46,40 @@ const Sidebar = () => {
           >
             <FaCircleRight />
           </SidebarItem>
-          <SidebarItem displayName="Job Posts" linkTo={"/jobpost"}>
+          <SidebarItem
+            displayName="Job Posts"
+            linkTo={"/jobpost"}
+          >
             <FaCircleRight />
           </SidebarItem>
-          <SidebarItem displayName="Modal Page" linkTo={"/modalpage"}>
+          <SidebarItem
+            displayName="Cart Page"
+            linkTo={"/cartpage"}
+          >
+            <FaCircleRight />
+          </SidebarItem>
+          <SidebarItem
+            displayName="Search filter"
+            linkTo={"/searchfilter"}
+          >
+            <FaCircleRight />
+          </SidebarItem>
+          <SidebarItem
+            displayName="Modal in tailwind"
+            linkTo={"/modal"}
+          >
+            <FaCircleRight />
+          </SidebarItem>
+          <SidebarItem
+            displayName="Nested Routes"
+            linkTo={"/nestedroutes"}
+          >
+            <FaCircleRight />
+          </SidebarItem>
+          <SidebarItem
+            displayName="Login"
+            linkTo={"/login"}
+          >
             <FaCircleRight />
           </SidebarItem>
         </ul>

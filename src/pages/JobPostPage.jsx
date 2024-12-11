@@ -1,3 +1,8 @@
+/* Problem focus on how we can fetch data in react where one query result is depended
+on other
+*/ 
+
+
 // components import
 import MainLayout from "../components/MainLayout/MainLayout";
 import Container from "../components/Container/Container";
@@ -47,7 +52,10 @@ const JobPostPage = () => {
   }, []);
 
   useEffect(() => {
-    fetchJobs();
+    //use useEffect to fetch secondary url data which is depended on primary data 
+    //In this case async func fetchJobs() is depeneded on async func fetchJobIds()
+    // then from secondary async func fetchJobs() call the primary async func fetchJobIds()
+    fetchJobs(); //calling secondary func first in useEffect
   }, []);
 
   const fetchJobIds = async () => {
@@ -65,12 +73,18 @@ const JobPostPage = () => {
     }
 
     setJobIds(data);
-    return data;
+    return data; //we need to pass this primary data to secondary func sync fetchJobs() but
+    //we did not pass the state variable instead we declare our own variable "data" stored info. in it and then
+    // we send it to func
   };
 
   const fetchJobs = async () => {
-    const jobIds = await fetchJobIds();
-
+    const jobIds = await fetchJobIds();  //calling the primary func
+    //now as we got our primary data we have to fech all the result related to secondary data.
+    //but we need to make fetch call for every item in a primary data in this case for every Job id.
+    //so we looped through every id by map and the we return a fetch call for every item in a jobId array.
+    // by doing so now we got an array of promises.
+    // to get data from all those promises we used Promise.all method which will resolve or reject and return us data in a array
     const jobsArr = await Promise.all(
       jobIds.map((jobId) =>
         fetch(`https://hacker-news.firebaseio.com/v0/item/${jobId}.json`).then(

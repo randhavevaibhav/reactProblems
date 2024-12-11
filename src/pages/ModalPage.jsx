@@ -4,8 +4,12 @@ import Container from "../components/Container/Container";
 import Modal from "../components/Modal/Modal";
 // components import
 
+import { FaCheckCircle } from "react-icons/fa";
+import { IoCloseCircle } from "react-icons/io5";
+
 import { createPortal } from "react-dom";
 import { useState } from "react";
+import Button from "../components/Buttton/Button";
 
 const ModalPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,9 +17,8 @@ const ModalPage = () => {
     <>
       <MainLayout>
         <Container>
-          ModalPage
           <button
-            className="border border-gray-500 px-4 py-2 shadow-sm font-semibold rounded-md"
+            className="border px-4 py-2 tracking-wide"
             onClick={() => setIsOpen(true)}
           >
             Open Modal
@@ -24,30 +27,24 @@ const ModalPage = () => {
       </MainLayout>
       {createPortal(
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-          <Modal.ModalBody>
-            <div
-              className="bg-white rounded-md px-4 pb-4 flex flex-col gap-4 "
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button className="self-end p-2" onClick={() => setIsOpen(false)}>
-                X
-              </button>
-              <p className="text-lg font-bold">
-                Do you wish to cancel subscription ?
-              </p>
-              <div className="flex gap-4 flex-col sm:flex-row justify-center">
-                <button
-                  className="border border-gray-500 px-4 py-2 shadow-sm font-semibold rounded-md"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Cancel
-                </button>
-                <button className="border border-gray-500 px-4 py-2 shadow-sm font-semibold rounded-md">
-                  Deactivate
-                </button>
+          <>
+            <Modal.Body onClose={() => setIsOpen(false)}>
+              <Modal.Icon>
+                {/* <FaCheckCircle className="text-green-500 text-5xl"/> */}
+                <IoCloseCircle className="text-red-500 text-5xl" />
+              </Modal.Icon>
+
+              <Modal.Title>Dactivate account ?</Modal.Title>
+
+              <div className="flex gap-2 justify-center flex-col sm:flex-row  ">
+                <Button handelOnClick={() => setIsOpen(false)} >Cancel</Button>
+                <Button variant="Error" isDisable={true}>Deactivate</Button>
+                {/* <Button variant="Success">
+                        Ok
+                </Button> */}
               </div>
-            </div>
-          </Modal.ModalBody>
+            </Modal.Body>
+          </>
         </Modal>,
         document.body
       )}
