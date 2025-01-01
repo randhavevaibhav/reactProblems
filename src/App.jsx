@@ -24,6 +24,7 @@ import User from "./pages/NestedRoutes/Users/User";
 import Login from "./pages/Login";
 import ProtectedRoute from "./pages/NestedRoutes/ProtectedRoutes/ProtectedRoute";
 import ProtectedUserHome from "./pages/NestedRoutes/ProtectedRoutes/ProtectedUserHome";
+import EatNSplit from "./pages/EatNSplit/EatNSplit";
 //Page imports
 
 export const GlobalContext = createContext();
@@ -56,10 +57,10 @@ function App() {
             <Route path="profile" element={<Profile />} />
           </Route>
           <Route path="/login" element={<Login />} />
-          <Route element={<ProtectedRoute />} >
+          <Route element={<ProtectedRoute />}>
             <Route path="/userhome" element={<ProtectedUserHome />} />
           </Route>
-          
+          <Route path="/eatNsplit" element={<EatNSplit />} />
         </Routes>
       </GlobalContext.Provider>
     </>

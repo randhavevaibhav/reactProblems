@@ -12,7 +12,7 @@ import SidebarItem from "./SidebarItem";
 
 const Sidebar = () => {
   const { SidebarContext } = useContext(GlobalContext);
-  const {isSidebarOpen,setIsSidebarOpen} = SidebarContext;
+  const { isSidebarOpen, setIsSidebarOpen } = SidebarContext;
   return (
     <>
       <aside
@@ -46,40 +46,25 @@ const Sidebar = () => {
           >
             <FaCircleRight />
           </SidebarItem>
-          <SidebarItem
-            displayName="Job Posts"
-            linkTo={"/jobpost"}
-          >
+          <SidebarItem displayName="Job Posts" linkTo={"/jobpost"}>
             <FaCircleRight />
           </SidebarItem>
-          <SidebarItem
-            displayName="Cart Page"
-            linkTo={"/cartpage"}
-          >
+          <SidebarItem displayName="Cart Page" linkTo={"/cartpage"}>
             <FaCircleRight />
           </SidebarItem>
-          <SidebarItem
-            displayName="Search filter"
-            linkTo={"/searchfilter"}
-          >
+          <SidebarItem displayName="Search filter" linkTo={"/searchfilter"}>
             <FaCircleRight />
           </SidebarItem>
-          <SidebarItem
-            displayName="Modal in tailwind"
-            linkTo={"/modal"}
-          >
+          <SidebarItem displayName="Modal in tailwind" linkTo={"/modal"}>
             <FaCircleRight />
           </SidebarItem>
-          <SidebarItem
-            displayName="Nested Routes"
-            linkTo={"/nestedroutes"}
-          >
+          <SidebarItem displayName="Nested Routes" linkTo={"/nestedroutes"}>
             <FaCircleRight />
           </SidebarItem>
-          <SidebarItem
-            displayName="Login"
-            linkTo={"/login"}
-          >
+          <SidebarItem displayName="Login" linkTo={"/login"}>
+            <FaCircleRight />
+          </SidebarItem>
+          <SidebarItem displayName="Eat N Split App" linkTo={"/eatNsplit"}>
             <FaCircleRight />
           </SidebarItem>
         </ul>

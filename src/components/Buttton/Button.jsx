@@ -10,32 +10,37 @@ const varientList = {
   Error: `text-white bg-red-500 hover:bg-red-600 disabled:bg-red-300`,
 };
 
-const getVarientClasses = (varient = "Primary", isDisabled = false) => {
+const getVarientClasses = (
+  varient = "Primary",
+  isDisabled = false,
+  animated = false
+) => {
   return isDisabled
     ? varientList[varient]
-    : varientList[varient] + spacer + buttonTransition; //spacer is IMP
+    : varientList[varient] + spacer + (animated ? buttonTransition : ""); //spacer is IMP
 };
 
 const BaseClasses = `px-4 py-2  border rounded-md shadow-md font-semibold tracking-wide`;
 
 const Button = ({
   children,
-  handelOnClick = () => {},
+  onClick = () => {},
   handleOnHover = () => {},
   isDisable = false,
   type = "button",
   variant = "Primary",
   className,
+  animated = false,
 }) => {
   return (
     <>
       <button
         type={type}
-        onClick={handelOnClick}
+        onClick={onClick}
         onMouseOver={handleOnHover}
         disabled={isDisable}
         className={twMerge(
-          getVarientClasses(variant, isDisable),
+          getVarientClasses(variant, isDisable, animated),
           BaseClasses,
           className
         )}
