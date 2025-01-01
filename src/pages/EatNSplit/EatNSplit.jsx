@@ -89,14 +89,14 @@ const FormAddFriend = ({ handleAddFriend }) => {
   return (
     <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
       <input
-        className="pl-4 p-2 border rounded-md"
+        className="pl-4 p-2 border rounded-md w-full"
         type="text"
         placeholder="enter name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <input
-        className="pl-4 p-2 border rounded-md"
+        className="pl-4 p-2 border rounded-md w-full"
         type="text"
         placeholder="enter image URL"
         value={image}
@@ -131,7 +131,7 @@ const FormSplitBill = ({ selectedFriend }) => {
             type="number"
             name="bill_amount"
             id="bill_amount"
-            className="pl-4 p-2 border rounded-md text-center"
+            className="pl-4 p-2 border rounded-md text-center w-full"
             placeholder="Enter bill"
             value={bill}
             onChange={(e) => {
@@ -150,7 +150,7 @@ const FormSplitBill = ({ selectedFriend }) => {
             name="user_expenses"
             id="user_expenses"
             disabled={disableUserInput}
-            className="pl-4 p-2 border rounded-md text-center"
+            className="pl-4 p-2 border rounded-md text-center w-full"
             placeholder="Enter your expenses"
             value={paidByUser}
             onChange={(e) =>
@@ -171,7 +171,7 @@ const FormSplitBill = ({ selectedFriend }) => {
             name="friend_expenses"
             disabled
             id="friend_expenses"
-            className="pl-4 p-2 border rounded-md text-center"
+            className="pl-4 p-2 border rounded-md text-center w-full"
             value={paidByFriend}
           />
         </div>
