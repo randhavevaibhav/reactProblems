@@ -119,12 +119,12 @@ const FormSplitBill = ({ selectedFriend }) => {
   const disableUserInput = bill ? false : true;
   return (
     <>
-      <h2 className="font-bold text-3xl">
+      <h2 className="font-bold md:text-3xl text-xl mb-4">
         SPLIT THE BILL WITH {selectedFriend.name}
       </h2>
       <form className="border flex flex-col gap-2 p-8">
         <div className="md:flex justify-between">
-          <label htmlFor="bill_amount" className="font-bold text-xl">
+          <label htmlFor="bill_amount" className="font-bold md:text-xl">
             Bill amount:
           </label>
           <input
@@ -142,7 +142,7 @@ const FormSplitBill = ({ selectedFriend }) => {
           />
         </div>
         <div className="md:flex justify-between">
-          <label htmlFor="user_expenses" className="font-bold text-xl">
+          <label htmlFor="user_expenses" className="font-bold md:text-xl">
             Your expense:
           </label>
           <input
@@ -163,7 +163,7 @@ const FormSplitBill = ({ selectedFriend }) => {
           />
         </div>
         <div className="md:flex justify-between">
-          <label htmlFor="friend_expenses" className="font-bold text-xl">
+          <label htmlFor="friend_expenses" className="font-bold md:text-xl">
             {selectedFriend.name}'s expense:
           </label>
           <input
@@ -176,7 +176,7 @@ const FormSplitBill = ({ selectedFriend }) => {
           />
         </div>
         <div className="md:flex justify-between">
-          <label htmlFor="bill_select" className="font-bold text-xl">
+          <label htmlFor="bill_select" className="font-bold md:text-xl">
             Who's paying the bill:
           </label>
           <select
