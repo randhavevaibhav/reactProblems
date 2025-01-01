@@ -221,7 +221,7 @@ const EatNSplit = () => {
   return (
     <MainLayout>
       <Container tailwindClasses={["rounded-md"]}>
-        <div className="main grid md:grid-cols-[30rem_1fr] gap-2">
+        <div className="main grid md:grid-cols-[30rem_1fr] grid-cols-1 gap-2">
           <div className="flex flex-col gap-2">
             <div className="friend_list border p-2 ">
               <FriendList
