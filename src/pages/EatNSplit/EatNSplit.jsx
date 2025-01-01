@@ -123,7 +123,7 @@ const FormSplitBill = ({ selectedFriend }) => {
         SPLIT THE BILL WITH {selectedFriend.name}
       </h2>
       <form className="border flex flex-col gap-2 p-8">
-        <div className="flex justify-between">
+        <div className="md:flex justify-between">
           <label htmlFor="bill_amount" className="font-bold text-xl">
             Bill amount:
           </label>
@@ -141,7 +141,7 @@ const FormSplitBill = ({ selectedFriend }) => {
             }}
           />
         </div>
-        <div className="flex justify-between">
+        <div className="md:flex justify-between">
           <label htmlFor="user_expenses" className="font-bold text-xl">
             Your expense:
           </label>
@@ -162,7 +162,7 @@ const FormSplitBill = ({ selectedFriend }) => {
             }
           />
         </div>
-        <div className="flex justify-between">
+        <div className="md:flex justify-between">
           <label htmlFor="friend_expenses" className="font-bold text-xl">
             {selectedFriend.name}'s expense:
           </label>
@@ -175,7 +175,7 @@ const FormSplitBill = ({ selectedFriend }) => {
             value={paidByFriend}
           />
         </div>
-        <div className="flex justify-between">
+        <div className="md:flex justify-between">
           <label htmlFor="bill_select" className="font-bold text-xl">
             Who's paying the bill:
           </label>
