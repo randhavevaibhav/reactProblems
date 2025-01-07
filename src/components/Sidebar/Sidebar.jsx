@@ -70,6 +70,9 @@ const Sidebar = () => {
           <SidebarItem displayName="Fetch data" linkTo={"/fetchdata"}>
             <FaCircleRight />
           </SidebarItem>
+          <SidebarItem displayName="flyout page" linkTo={"/flyoutpage"}>
+            <FaCircleRight />
+          </SidebarItem>
         </ul>
       </aside>
     </>
