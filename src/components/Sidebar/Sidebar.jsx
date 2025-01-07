@@ -76,6 +76,9 @@ const Sidebar = () => {
           <SidebarItem displayName="ref problem" linkTo={"/refproblem"}>
             <FaCircleRight />
           </SidebarItem>
+          <SidebarItem displayName="react hook form" linkTo={"/userform"}>
+            <FaCircleRight />
+          </SidebarItem>
         </ul>
       </aside>
     </>

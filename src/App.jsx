@@ -28,6 +28,7 @@ import EatNSplit from "./pages/EatNSplit/EatNSplit";
 import FetchData from "./pages/FetchData";
 import FlyoutPage from "./pages/FlyoutPage";
 import RefProblem from "./pages/RefProblem/RefProblemPage";
+import UserForm from "./pages/UserForm";
 //Page imports
 
 export const GlobalContext = createContext();
@@ -82,6 +83,7 @@ function App() {
             <Route path="/fetchdata" element={<FetchData />} />
             <Route path="/flyoutpage" element={<FlyoutPage />} />
             <Route path="/refproblem" element={<RefProblem />} />
+            <Route path="/userform" element={<UserForm />} />
           </Routes>
         </GlobalContext.Provider>
       </ErrorBoundary>
