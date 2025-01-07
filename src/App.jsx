@@ -27,6 +27,7 @@ import ProtectedUserHome from "./pages/NestedRoutes/ProtectedRoutes/ProtectedUse
 import EatNSplit from "./pages/EatNSplit/EatNSplit";
 import FetchData from "./pages/FetchData";
 import FlyoutPage from "./pages/FlyoutPage";
+import RefProblem from "./pages/RefProblem/RefProblemPage";
 //Page imports
 
 export const GlobalContext = createContext();
@@ -80,6 +81,7 @@ function App() {
             <Route path="/eatNsplit" element={<EatNSplit />} />
             <Route path="/fetchdata" element={<FetchData />} />
             <Route path="/flyoutpage" element={<FlyoutPage />} />
+            <Route path="/refproblem" element={<RefProblem />} />
           </Routes>
         </GlobalContext.Provider>
       </ErrorBoundary>

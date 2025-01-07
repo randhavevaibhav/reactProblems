@@ -73,6 +73,9 @@ const Sidebar = () => {
           <SidebarItem displayName="flyout page" linkTo={"/flyoutpage"}>
             <FaCircleRight />
           </SidebarItem>
+          <SidebarItem displayName="ref problem" linkTo={"/refproblem"}>
+            <FaCircleRight />
+          </SidebarItem>
         </ul>
       </aside>
     </>
