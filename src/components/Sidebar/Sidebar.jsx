@@ -67,6 +67,9 @@ const Sidebar = () => {
           <SidebarItem displayName="Eat N Split App" linkTo={"/eatNsplit"}>
             <FaCircleRight />
           </SidebarItem>
+          <SidebarItem displayName="Fetch data" linkTo={"/fetchdata"}>
+            <FaCircleRight />
+          </SidebarItem>
         </ul>
       </aside>
     </>

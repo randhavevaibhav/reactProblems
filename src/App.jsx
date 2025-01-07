@@ -1,7 +1,7 @@
 //React imports
 import { Routes, Route } from "react-router-dom";
 import { useState, createContext } from "react";
-
+import { ErrorBoundary } from "react-error-boundary";
 //React imports
 
 // components import
@@ -25,44 +25,62 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./pages/NestedRoutes/ProtectedRoutes/ProtectedRoute";
 import ProtectedUserHome from "./pages/NestedRoutes/ProtectedRoutes/ProtectedUserHome";
 import EatNSplit from "./pages/EatNSplit/EatNSplit";
+import FetchData from "./pages/FetchData";
 //Page imports
 
 export const GlobalContext = createContext();
+
+const Fallback = ({ error }) => {
+  console.log("fallback");
+  return (
+    <>
+      <h3>Something went Wrong !!!</h3>
+      <pre>{error.message}</pre>
+    </>
+  );
+};
+
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const [isAuth, setIsAuth] = useState(false);
   return (
     <>
-      <GlobalContext.Provider
-        value={{
-          SidebarContext: { isSidebarOpen, setIsSidebarOpen },
+      <ErrorBoundary FallbackComponent={Fallback}>
+        <GlobalContext.Provider
+          value={{
+            SidebarContext: { isSidebarOpen, setIsSidebarOpen },
 
-          UserAuthContext: { isAuth, setIsAuth },
-        }}
-      >
-        <Sidebar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tailwindcompo" element={<TailwindCompo />} />
-          <Route path="/paginationproducts" element={<PaginationProducts />} />
-          <Route path="/jobpost" element={<JobPostPage />} />
-          <Route path="/cartpage" element={<CartPage />} />
-          <Route path="/searchfilter" element={<SearchFilter />} />
-          <Route path="/modal" element={<ModalPage />} />
-          <Route path="/nestedroutes" element={<NestedRoutes />}>
-            <Route path="users" element={<Users />}>
-              <Route path=":id" element={<User />} />
+            UserAuthContext: { isAuth, setIsAuth },
+          }}
+        >
+          <Sidebar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tailwindcompo" element={<TailwindCompo />} />
+            <Route
+              path="/paginationproducts"
+              element={<PaginationProducts />}
+            />
+            <Route path="/jobpost" element={<JobPostPage />} />
+            <Route path="/cartpage" element={<CartPage />} />
+            <Route path="/searchfilter" element={<SearchFilter />} />
+            <Route path="/modal" element={<ModalPage />} />
+            <Route path="/nestedroutes" element={<NestedRoutes />}>
+              <Route path="users" element={<Users />}>
+                <Route path=":id" element={<User />} />
+              </Route>
+              <Route path="profile" element={<Profile />} />
             </Route>
-            <Route path="profile" element={<Profile />} />
-          </Route>
-          <Route path="/login" element={<Login />} />
-          <Route element={<ProtectedRoute />}>
-            <Route path="/userhome" element={<ProtectedUserHome />} />
-          </Route>
-          <Route path="/eatNsplit" element={<EatNSplit />} />
-        </Routes>
-      </GlobalContext.Provider>
+            <Route path="/login" element={<Login />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/userhome" element={<ProtectedUserHome />} />
+            </Route>
+            <Route path="/eatNsplit" element={<EatNSplit />} />
+            <Route path="/fetchdata" element={<FetchData />} />
+          </Routes>
+        </GlobalContext.Provider>
+      </ErrorBoundary>
     </>
   );
 }
