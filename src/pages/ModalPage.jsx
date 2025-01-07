@@ -37,9 +37,11 @@ const ModalPage = () => {
               <Modal.Title>Dactivate account ?</Modal.Title>
 
               <div className="flex gap-2 justify-center flex-col sm:flex-row  ">
-                <Button handelOnClick={() => setIsOpen(false)} >Cancel</Button>
-                <Button variant="Error" isDisable={true}>Deactivate</Button>
-                {/* <Button variant="Success">
+                <Button onClick={() => setIsOpen(false)}>Cancel</Button>
+                <Button variant="danger" isDisable={true}>
+                  Deactivate
+                </Button>
+                {/* <Button variant="success">
                         Ok
                 </Button> */}
               </div>

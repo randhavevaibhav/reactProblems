@@ -7,7 +7,7 @@ const Button = forwardRef(
       children,
       className,
       size,
-      varient,
+      variant,
       onClick,
       disabled,
       onMouseOver,
@@ -33,7 +33,7 @@ const Button = forwardRef(
     const mergedClasses = twMerge(
       defaultClasses,
       btnSizes[size],
-      btnVarients[varient]
+      btnVarients[variant]
     );
     const overrideClasses = twMerge(mergedClasses, className);
     return (
