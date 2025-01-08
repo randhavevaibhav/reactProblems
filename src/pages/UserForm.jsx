@@ -1,6 +1,11 @@
 import React, { forwardRef } from "react";
 import { useForm } from "react-hook-form";
 
+// components import
+import MainLayout from "../components/MainLayout/MainLayout";
+import Container from "../components/Container/Container";
+// components import
+
 import Button from "../components/Buttton/Button";
 
 const InputContainer = ({ children }) => {
@@ -41,6 +46,9 @@ const UserForm = () => {
   console.log("Errors in form ===> ", errors);
   return (
     <>
+      <MainLayout>
+        <Container>
+        
       <div>
         <form
           action="#"
@@ -126,6 +134,8 @@ const UserForm = () => {
           </div>
         </form>
       </div>
+          </Container>
+        </MainLayout>
     </>
   );
 };
