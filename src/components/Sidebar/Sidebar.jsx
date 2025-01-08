@@ -16,7 +16,7 @@ const Sidebar = () => {
   return (
     <>
       <aside
-        className={`w-64  p-4 bg-[#111827] rounded-md text-white h-screen md:translate-x-0  transform transition duration-700 ease-in-out ${
+        className={`w-64  p-4 bg-[#111827] rounded-md text-white h-[85vh] md:translate-x-0  transform transition duration-700 ease-in-out ${
           !isSidebarOpen ? "-translate-x-[18rem]" : ""
         }  fixed top-0 z-20 m-3 overflow-auto`}
       >
