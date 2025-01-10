@@ -1,6 +1,6 @@
-import PersonIMg from "./person.png";
-import Person2 from "./person2.webp";
-import Person3 from "./person3.jpg";
+import PersonIMg from "./assets/person.png";
+import Person2 from "./assets/person2.jpg";
+import Person3 from "./assets/person3.jpg";
 export const friendList = [
   {
     id: 1,
